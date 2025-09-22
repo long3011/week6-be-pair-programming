@@ -12,10 +12,14 @@ const generateToken = (_id) => {
 // @route   POST /api/users/signup
 // @access  Public
 const signupUser = async (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, password,
+    phone_number, gender, date_of_birth, membership_status
+   } = req.body;
 
   try {
-    const user = await User.signup(name, email, password);
+    const user = await User.signup(name, email, password,
+      phone_number, gender, date_of_birth, membership_status
+    );
 
     // create a token
     const token = generateToken(user._id);
