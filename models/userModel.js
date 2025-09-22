@@ -29,9 +29,9 @@ const userSchema = mongoose.Schema(
 userSchema.statics.signup = async function (name, email, password
   , phone_number, gender, date_of_birth, membership_status
 ) {
-  validation
-  if ((!name , !email, !password, !phone_number
-    , !gender ,!date_of_birth, !membership_status
+  //validation
+  if ((!name , !email|| !password|| !phone_number
+    || !gender ||!date_of_birth|| !membership_status
   )) {
     throw Error("Please add all fields");
   }
