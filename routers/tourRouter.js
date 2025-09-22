@@ -7,6 +7,8 @@ const {
   updateTour,
   deleteTour,
 } = require("../controllers/tourControllers");
+const requireAuth = require("../middleware/requireAuth");
+router.use(requireAuth);
 // const auth = require("../middleware/auth");
 
 router.get("/", getAllTours);
